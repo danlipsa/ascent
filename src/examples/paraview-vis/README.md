@@ -15,7 +15,7 @@ Insitu ParaView visualization using the Ascent Extract interface
 * Install ParaView (use older matplotlib because newest requires python3.)
    - `spack install paraview +python ^py-matplotlib@2.2.3 ~tk`
       We use ParaView master because we need the fix in 0b349f3e18.
-* Continue with `3. Common installation instructions`
+* Continue with `3. Manual installation instructions`
 
 # 2.1 Installation instructions for spack devel
 * Install spack, modules and shell support.
@@ -34,7 +34,7 @@ Insitu ParaView visualization using the Ascent Extract interface
   - Download the patch [paraview-package-momentinvariants.patch](paraview-package-momentinvariants.patch)
   - Patch paraview: `patch -p1 < paraview-package-momentinvariants.patch`
 * Install Ascent and ParaView. This is the easiest option as you don't need to
-  continue with step 4. Common installation instructions.
+  continue with step 4. Manual installation instructions.
   - `spack install ascent~vtkh+paraview^python@3.7.4^conduit~hdf5_compat^paraview+osmesa~opengl2`
 * Install ParaView
   - `spack install paraview@develop+python3+mpi+osmesa~opengl2`
@@ -44,9 +44,9 @@ Insitu ParaView visualization using the Ascent Extract interface
   - `spack install ascent~vtkh^python@3.7.4`
 * Load required modules
   - `spack load conduit;spack load py-numpy;spack load py-mpi4py;spack load paraview`
-* Continue with `3. Common installation instructions`
+* Continue with `3. Manual installation instructions`
 
-# 3. Common installation instructions
+# 3. Manual installation instructions
 * Test with available simulations - VTK files and images will be generated in the current directory.
    - Test `proxies/cloverleaf3d`
      - `cd $(spack location --install-dir ascent)/examples/ascent/proxies/cloverleaf3d`.
@@ -98,7 +98,7 @@ Insitu ParaView visualization using the Ascent Extract interface
 * Continue with `2.2 Install ParaView and Ascent` but add the following postfix
   for ParaView and Ascent specs
     `^spectrum-mpi@10.3.0.1-20190611`
-* Continue with `3. Common Installation Instructions` but do not run the simulation.
+* Continue with `3. Manual Installation Instructions` but do not run the simulation.
 * To run the simulation execute:
   `bsub $(spack location --install-dir ascent)/examples/ascent/paraview-vis/summit-moment-invariants.lsf`
   To check the results use `bjobs -a`

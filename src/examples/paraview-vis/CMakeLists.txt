@@ -1,6 +1,6 @@
-install(DIRECTORY . DESTINATION examples/ascent)
+install(DIRECTORY . DESTINATION examples/ascent/paraview-vis)
 
-# Install required files in
+# Install required files for each simulation
 if (PARAVIEW_DIR)
-
+  
 endif()
